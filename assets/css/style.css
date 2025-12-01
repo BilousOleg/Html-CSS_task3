@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
 :root {
   --back-color: #efefef;
   --main-color-light: #ffffff;
   --main-color-dark: #017afa;
   --border-color: #808080;
   --sub-color-light: #fc6427;
+  --sub-color-lighter: #fca727;
   --sub-color-dark: #429dff;
 }
 
@@ -21,11 +20,11 @@ body {
 
 main {
   display: flex;
-  align-items: stretch; /* Хоча й стоїть за замовчуванням, додав, щоб показати, що відповідає за однаковий розмір карток */
   align-content: flex-start;
   justify-content: center;
   flex-wrap: wrap; /* Перенесення на новий рядок при нестачі місця */
   min-height: 100vh;
+  /* padding: 0 10.4vw; */
   background-color: var(--back-color);
 }
 
@@ -76,16 +75,17 @@ main {
 }
 
 .button-section {
-  display: flex;
-  gap: 5px;
-  margin-top: auto; /* Забезпечення однакової висоти основних елементів карток */
+  font-size: 0;
 }
 
 .follow-btn,
 .message-btn {
+  display: inline-block;
   padding: 0.625rem 0.9375rem;
+  margin-top: auto; /* Забезпечення однакової висоти основних елементів карток */
   font-size: 1.1rem;
   font-family: inherit;
+  line-height: normal;
   text-decoration: none;
   color: var(--main-color-light);
   background-color: var(--main-color-dark);
@@ -94,18 +94,32 @@ main {
   cursor: pointer;
 }
 
+.message-btn {
+  margin-left: 5px;
+}
+
 .follow-btn:hover,
 .message-btn:hover {
   background-color: var(--sub-color-dark);
 }
 
 .social-links {
-  display: flex;
-  gap: 10px;
   margin-top: 10px;
-  color: var(--sub-color-light);
+}
+
+.social-links > li {
+  display: inline;
+}
+
+.social-links > li + li {
+  margin-left: 10px;
 }
 
 .social-link {
   font-size: 0.875rem;
+  color: var(--sub-color-light);
+}
+
+.social-link:hover {
+  color: var(--sub-color-lighter);
 }
